@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Stellarium</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <canvas id="sky" aria-label="Night sky view"></canvas>
+
+      <section class="hud top-left">
+        <h1>Mini Stellarium</h1>
+        <p>A lightweight, interactive planetarium in your browser.</p>
+      </section>
+
+      <section class="hud controls">
+        <label>
+          Latitude
+          <input id="latitude" type="range" min="-90" max="90" step="0.1" value="40.7" />
+          <span id="latitudeValue">40.7°</span>
+        </label>
+
+        <label>
+          Longitude
+          <input id="longitude" type="range" min="-180" max="180" step="0.1" value="-74.0" />
+          <span id="longitudeValue">-74.0°</span>
+        </label>
+
+        <label>
+          Time speed
+          <input id="timeSpeed" type="range" min="0" max="720" step="1" value="30" />
+          <span id="timeSpeedValue">30x</span>
+        </label>
+
+        <label>
+          Star density
+          <input id="starDensity" type="range" min="150" max="1200" step="10" value="700" />
+          <span id="starDensityValue">700</span>
+        </label>
+
+        <div class="buttons">
+          <button id="togglePlay" type="button">Pause</button>
+          <button id="toggleGrid" type="button">Hide Grid</button>
+          <button id="resetView" type="button">Reset View</button>
+        </div>
+      </section>
+
+      <section class="hud top-right" id="statusPanel"></section>
+
+      <section class="hud bottom-left legend">
+        <p><span class="dot planet"></span> Planets</p>
+        <p><span class="dot star"></span> Stars</p>
+        <p><span class="dot horizon"></span> Horizon</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
